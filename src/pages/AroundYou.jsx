@@ -19,6 +19,8 @@ const CountryTracks = () => {
       .finally(() => setLoading(false));
   }, [country]);
 
+  console.log(import.meta.env.VITE_GEO_API_KEY);
+
   if (isFetching && loading) return <Loader title="Loading Songs around you..." />;
 
   if (error && country !== '') return <Error />;
